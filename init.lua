@@ -69,17 +69,12 @@ return {
   -- augroups/autocommands and custom filetypes also this just pure lua so
   -- anything that doesn't fit in the normal config locations above can go here
   polish = function()
-    -- Set up custom filetypes
-    -- vim.filetype.add {
-    --   extension = {
-    --     foo = "fooscript",
-    --   },
-    --   filename = {
-    --     ["Foofile"] = "fooscript",
-    --   },
-    --   pattern = {
-    --     ["~/%.config/foo/.*"] = "fooscript",
-    --   },
-    -- }
+    if vim.g.neovide then
+      vim.o.guifont = "CaskaydiaCove Nerd Font Mono:h14.5"
+      vim.g.neovide_input_macos_alt_is_meta = true
+      vim.g.neovide_theme = "auto"
+      vim.g.neovide_fullscreen = false
+      vim.g.neovide_background_color = "#242933"
+    end
   end,
 }
